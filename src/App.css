@@ -1,0 +1,627 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Space+Grotesk:wght@400;500;600&display=swap');
+
+:root {
+  --tinta: #2b2420;
+  --papel: #faf6ee;
+  --papel-tarjeta: #fffdf8;
+  --crema: #f1e9d8;
+  --terracota: #c1502e;
+  --terracota-oscuro: #9c3e21;
+  --salvia: #5c7a5e;
+  --ocre: #b9892f;
+  --linea: #e2d6bd;
+  --sombra: rgba(43, 36, 32, 0.12);
+  --radio: 14px;
+  --fuente-display: 'Fraunces', serif;
+  --fuente-cuerpo: 'Space Grotesk', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--papel);
+  background-image:
+    radial-gradient(circle at 1px 1px, var(--linea) 1px, transparent 0);
+  background-size: 28px 28px;
+  color: var(--tinta);
+  font-family: var(--fuente-cuerpo);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Cabecera ---------- */
+
+.cabecera {
+  position: relative;
+  background: var(--tinta);
+  color: var(--papel);
+  padding: 56px 24px 72px;
+  overflow: hidden;
+}
+
+.cabecera__contenido {
+  max-width: 880px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.cabecera__eyebrow {
+  font-family: var(--fuente-cuerpo);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: var(--ocre);
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.cabecera h1 {
+  font-family: var(--fuente-display);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.cabecera__subtitulo {
+  margin: 10px 0 0;
+  color: var(--crema);
+  opacity: 0.75;
+  font-size: 0.95rem;
+}
+
+.cabecera__textura {
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--terracota) 0%, transparent 70%);
+  opacity: 0.35;
+}
+
+/* ---------- Contenedor general ---------- */
+
+.contenedor {
+  max-width: 880px;
+  width: 100%;
+  margin: -40px auto 0;
+  padding: 0 24px 80px;
+  flex: 1;
+}
+
+.barra-superior {
+  margin-bottom: 20px;
+}
+
+.buscador {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--papel-tarjeta);
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  padding: 4px 18px;
+  box-shadow: 0 8px 24px var(--sombra);
+}
+
+.buscador__icono {
+  margin-right: 10px;
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
+
+.buscador input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 12px 0;
+  font-size: 0.95rem;
+  font-family: var(--fuente-cuerpo);
+  width: 100%;
+  color: var(--tinta);
+}
+
+/* ---------- Botón nueva ficha ---------- */
+
+.boton-ficha-nueva {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px;
+  margin-bottom: 24px;
+  border: 2px dashed var(--linea);
+  border-radius: var(--radio);
+  background: transparent;
+  color: var(--tinta);
+  font-family: var(--fuente-cuerpo);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.boton-ficha-nueva:hover {
+  border-color: var(--terracota);
+  background: rgba(193, 80, 46, 0.05);
+}
+
+.boton-ficha-nueva__icono {
+  font-size: 1.3rem;
+  color: var(--terracota);
+}
+
+/* ---------- Formulario de contacto ---------- */
+
+.tarjeta-form {
+  background: var(--papel-tarjeta);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 30px var(--sombra);
+}
+
+.tarjeta-form__titulo {
+  font-family: var(--fuente-display);
+  font-size: 1.4rem;
+  margin: 0 0 18px;
+  font-weight: 600;
+}
+
+.tarjeta-form__acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.campo {
+  margin-bottom: 16px;
+}
+
+.campo label {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--tinta);
+  opacity: 0.6;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--linea);
+  border-radius: 10px;
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.95rem;
+  background: var(--papel);
+  color: var(--tinta);
+  outline: none;
+  transition: border-color 0.2s ease;
+  resize: vertical;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  border-color: var(--terracota);
+}
+
+.input--error {
+  border-color: var(--terracota-oscuro) !important;
+}
+
+.mensaje-error {
+  display: block;
+  color: var(--terracota-oscuro);
+  font-size: 0.78rem;
+  margin-top: 5px;
+}
+
+.mensaje-error--bloque {
+  background: rgba(193, 80, 46, 0.08);
+  border: 1px solid rgba(193, 80, 46, 0.25);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+}
+
+/* ---------- Botones genéricos ---------- */
+
+.boton {
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 11px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.boton:active {
+  transform: scale(0.97);
+}
+
+.boton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.boton--principal {
+  background: var(--terracota);
+  color: white;
+}
+
+.boton--principal:hover:not(:disabled) {
+  background: var(--terracota-oscuro);
+}
+
+.boton--fantasma {
+  background: transparent;
+  color: var(--tinta);
+  opacity: 0.6;
+}
+
+.boton--fantasma:hover {
+  opacity: 1;
+}
+
+/* ---------- Grilla de fichas ---------- */
+
+.grilla-fichas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* ---------- Ficha de contacto ---------- */
+
+.ficha {
+  background: var(--papel-tarjeta);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  padding: 22px;
+  box-shadow: 0 10px 26px var(--sombra);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.ficha--eliminando {
+  opacity: 0.3;
+  transform: scale(0.97);
+  pointer-events: none;
+}
+
+.ficha__cabecera {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ficha__avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--crema);
+  color: var(--terracota-oscuro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.ficha__nombre {
+  flex: 1;
+  min-width: 0;
+}
+
+.ficha__nombre h3 {
+  margin: 0;
+  font-family: var(--fuente-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ficha__contador {
+  font-size: 0.78rem;
+  opacity: 0.55;
+}
+
+.boton-ficha-eliminar {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  opacity: 0.4;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.boton-ficha-eliminar:hover {
+  opacity: 1;
+  background: rgba(193, 80, 46, 0.1);
+}
+
+.confirmar-borrado {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.confirmar-borrado span {
+  opacity: 0.6;
+  margin-right: 2px;
+}
+
+.confirmar-borrado__si,
+.confirmar-borrado__no {
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  font-family: var(--fuente-cuerpo);
+}
+
+.confirmar-borrado__si {
+  background: var(--terracota);
+  color: white;
+}
+
+.confirmar-borrado__no {
+  background: var(--crema);
+  color: var(--tinta);
+}
+
+.ficha__divisor {
+  height: 1px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--linea) 0,
+    var(--linea) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  margin: 16px 0;
+}
+
+.ficha__lista-datos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+/* ---------- Item de dato de contacto ---------- */
+
+.item-dato {
+  background: var(--papel);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--linea);
+}
+
+.item-dato__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.etiqueta-tipo {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.etiqueta-tipo--personal {
+  background: rgba(92, 122, 94, 0.15);
+  color: var(--salvia);
+}
+
+.etiqueta-tipo--trabajo {
+  background: rgba(193, 80, 46, 0.15);
+  color: var(--terracota-oscuro);
+}
+
+.etiqueta-tipo--casa {
+  background: rgba(185, 137, 47, 0.18);
+  color: var(--ocre);
+}
+
+.boton-eliminar-dato {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  opacity: 0.35;
+  cursor: pointer;
+  line-height: 1;
+  padding: 2px 6px;
+}
+
+.boton-eliminar-dato:hover {
+  opacity: 1;
+  color: var(--terracota-oscuro);
+}
+
+.item-dato__cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.item-dato__linea {
+  margin: 0;
+  font-size: 0.85rem;
+  word-break: break-word;
+}
+
+.item-dato__etiqueta {
+  opacity: 0.5;
+  font-size: 0.72rem;
+  margin-right: 5px;
+}
+
+/* ---------- Form de dato de contacto ---------- */
+
+.form-dato {
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 4px;
+}
+
+.selector-tipo {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip-tipo {
+  border: 1.5px solid var(--linea);
+  background: var(--papel-tarjeta);
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-size: 0.82rem;
+  font-family: var(--fuente-cuerpo);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.chip-tipo--activo {
+  background: var(--tinta);
+  border-color: var(--tinta);
+  color: var(--papel);
+}
+
+.boton-agregar-dato {
+  background: transparent;
+  border: 1.5px dashed var(--linea);
+  border-radius: 10px;
+  padding: 10px;
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.85rem;
+  color: var(--tinta);
+  opacity: 0.6;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.boton-agregar-dato:hover {
+  opacity: 1;
+  border-color: var(--terracota);
+  color: var(--terracota-oscuro);
+}
+
+/* ---------- Estados (carga / error / vacío) ---------- */
+
+.estado-info {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--tinta);
+  opacity: 0.7;
+}
+
+.estado-info__icono {
+  font-size: 2.2rem;
+  margin: 0 0 12px;
+}
+
+.estado-info--error p {
+  color: var(--terracota-oscuro);
+  margin-bottom: 14px;
+}
+
+.estado-info--vacio span {
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  opacity: 0.7;
+}
+
+.estado-info__spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--linea);
+  border-top-color: var(--terracota);
+  border-radius: 50%;
+  margin: 0 auto 14px;
+  animation: girar 0.8s linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+  .cabecera {
+    padding: 40px 20px 56px;
+  }
+
+  .grilla-fichas {
+    grid-template-columns: 1fr;
+  }
+
+  .tarjeta-form,
+  .ficha {
+    padding: 18px;
+  }
+}
+
+/* ---------- Accesibilidad: foco visible ---------- */
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--terracota);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
